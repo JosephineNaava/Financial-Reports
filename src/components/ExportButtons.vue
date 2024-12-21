@@ -1,8 +1,12 @@
 <template>
   <div class="export-container">
+
+    <div class="export-header">
+      <v-text>{{ "Export Report Here:" }}</v-text>
+    </div>
     
     <div class="button-group">
-      <v-btn @click="exportCSV" class="blue-btn">Export CSV</v-btn>
+      <v-btn @click="exportCSV" class="blue-btn">CSV</v-btn>
       <v-btn @click="exportPDF" class="blue-btn"> PDF</v-btn>
       <v-btn @click="exportExcel" class="blue-btn">Excel</v-btn>
     </div>
@@ -93,9 +97,10 @@ export default {
   gap: 10px;
 }
 
-.transaction-filter {
+.export-header {
+  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 10px;
-  border-radius: 12px;
 }
 
 .button-group {

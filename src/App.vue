@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .export-container {
   margin-top: 20px;
   display: flex;
