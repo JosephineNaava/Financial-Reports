@@ -3,7 +3,7 @@
       {
         "transactionId": "TX12345",
         "date": "2024-12-15",
-        "accountHolder": "John Doe",
+        "accountHolder": "John",
         "transactionType": "Deposit",
         "amount": 5000,
         "accountBalance": 20000
@@ -11,10 +11,42 @@
       {
         "transactionId": "TX12346",
         "date": "2024-12-16",
-        "accountHolder": "Jane Smith",
+        "accountHolder": "Jane",
         "transactionType": "Withdrawal",
         "amount": 1000,
         "accountBalance": 19000
+      },
+      {
+        "transactionId": "TX12347",
+        "date": "2024-12-16",
+        "accountHolder": "Joseph",
+        "transactionType": "Withdrawal",
+        "amount": 1000,
+        "accountBalance": 14000
+      },
+      {
+        "transactionId": "TX12348",
+        "date": "2024-12-16",
+        "accountHolder": "Josephine",
+        "transactionType": "Deposit",
+        "amount": 1000,
+        "accountBalance": 9000
+      },
+      {
+        "transactionId": "TX12349",
+        "date": "2024-12-16",
+        "accountHolder": "Junior",
+        "transactionType": "Withdrawal",
+        "amount": 1000,
+        "accountBalance": 16000
+      },
+      {
+        "transactionId": "TX12350",
+        "date": "2024-12-16",
+        "accountHolder": "Prosper",
+        "transactionType": "Deposit",
+        "amount": 1000,
+        "accountBalance": 7000
       }
     ]
   }

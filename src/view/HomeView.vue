@@ -18,24 +18,35 @@
     setup() {
       const reports = ref([]);
       const searchQuery = ref('');
+      const selectedTransactionType = ref('');
       const filteredReports = computed(() =>
-        reports.value.filter((report) =>
-          report.accountHolder
-            .toLowerCase()
-            .includes(searchQuery.value.toLowerCase())
-        )
-      );
+        reports.value.filter((report) => {
+            const matchesSearch = report.accountHolder
+                .toLowerCase()
+                .includes(searchQuery.value.toLowerCase());
+            const matchesTransactionType =
+                !selectedTransactionType.value || report.transactionType === selectedTransactionType.value;
+            return matchesSearch && matchesTransactionType;
+  })
+);
   
-      const handleFilter = (query) => {
-        searchQuery.value = query;
-      };
+      const handleFilter = (filterData) => {
+        searchQuery.value = filterData.search;
+        selectedTransactionType.value = filterData.transactionType;
+        };
   
       onMounted(async () => {
         const response = await axios.get('http://localhost:5000/reports');
         reports.value = response.data;
       });
   
-      return { reports, filteredReports, handleFilter };
+      return { 
+            reports,
+            searchQuery,
+            selectedTransactionType,
+            filteredReports,
+            handleFilter,
+        };
     },
   };
   </script>
