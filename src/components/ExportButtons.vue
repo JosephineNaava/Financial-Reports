@@ -1,18 +1,17 @@
 <template>
   <div class="export-container">
-
     
     <div class="button-group">
       <v-btn @click="exportCSV" class="blue-btn">Export CSV</v-btn>
-      <v-btn @click="exportPDF" class="blue-btn">Export PDF</v-btn>
-      <v-btn @click="exportExcel" class="blue-btn">Export Excel</v-btn>
+      <v-btn @click="exportPDF" class="blue-btn"> PDF</v-btn>
+      <v-btn @click="exportExcel" class="blue-btn">Excel</v-btn>
     </div>
   </div>
 </template>
 
 <script>
 import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable';
+import autoTable from 'jspdf-autotable'; 
 import * as XLSX from 'xlsx';
 
 export default {
@@ -86,8 +85,32 @@ export default {
 };
 </script>
 
+<style scoped>
+.export-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.transaction-filter {
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
 
+.button-group {
+  display: flex;
+  gap: 10px;
+}
 
+.blue-btn {
+  background-color: #1976d2;
+  color: white;
+  border-radius: 12px;
+  padding: 8px 16px;
+}
 
-  
+.blue-btn:hover {
+  background-color: #1565c0;
+}
+</style>

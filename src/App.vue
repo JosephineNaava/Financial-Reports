@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-app>
     <v-app-bar app color="primary" dark>
       <v-toolbar-title>Financial Report Viewer</v-toolbar-title>
@@ -13,10 +13,39 @@
 export default {
   name: "App",
 };
+</script> -->
+
+
+<template>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title>Financial Report Viewer</v-toolbar-title>
+    </v-app-bar>
+    <v-main>
+      <v-container>
+        <!-- Add filter and table logic directly if needed -->
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
+
+<script>
+import { useReportsStore } from "./store/reports";
+
+export default {
+  name: "App",
+  setup() {
+    const reportsStore = useReportsStore();
+    const reports = reportsStore.reports; // Access all reports
+    const filteredReports = reportsStore.filteredReports; // Access filtered reports
+
+    return { reports, filteredReports };
+  },
+};
 </script>
 
-
-<style>
+<style scoped>
 .export-container {
   margin-top: 20px;
   display: flex;
@@ -28,29 +57,4 @@ export default {
   margin-bottom: 10px;
   border-radius: 12px;
 }
-
-.button-group {
-  display: flex;
-  gap: 10px;
-}
-
-.blue-btn {
-  background-color: #1976d2;
-  color: white;
-  border-radius: 12px;
-  padding: 8px 16px;
-}
-
-.blue-btn:hover {
-  background-color: #1565c0;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
 </style>
-
-
